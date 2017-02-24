@@ -1,17 +1,34 @@
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Runner {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Rectangle recl = new Rectangle(10, 20);
-		System.out.println(recl.area());
-		System.out.println(recl.perimeter());
-		SwitchStatement();
-		ExitWhileLoop();
-		System.out.println(3 << 0); //Shifts the binary value over x places to the left.
+		//Rectangle recl = new Rectangle(10, 20);
+		//System.out.println(recl.area());
+		//System.out.println(recl.perimeter());
+		Triangle tria = new Triangle (3, 5, 7);
+		System.out.println(tria.Perimeter());
+		//System.out.println(tria.Area());
+		ArrayList<Triangle> triangles = new ArrayList<Triangle>();
+		triangles = MakeTriangles(4);
+		System.out.println(triangles.toString());
+		Collections.sort(triangles);
+		//SwitchStatement();
+		//ExitWhileLoop();
+		//System.out.println(3 << 0); //Shifts the binary value over x places to the left.
 		System.out.println(FlipCoin());
 	}
 	
+	private static ArrayList<Triangle> MakeTriangles(int num){
+		ArrayList<Triangle> tempList = new ArrayList<Triangle>(num);
+		for(int i = 0; i > num; i++){
+			tempList.add(new Triangle((int)(Math.random()*10 + 1),(int)(Math.random()*10 + 1),
+				(int)(Math.random()*10 + 1)));
+		}
+		return tempList;
+	}
 	private static void SwitchStatement(){
 		char ch = 'a';
 		
@@ -30,6 +47,20 @@ public class Runner {
 	private static void CharacterObject(){
 		Character ch = 'a'; //This builds the Character helper class in to the instance.
 		char c = 'x'; //This is simply a primitive.
+	}
+	
+	private static void HandleException1(){
+		try{
+			 int a[] = new int[2];
+			 System.out.println("Access element three :" + a[3]);
+		}
+		catch (ArrayIndexOutOfBoundsException e){
+			throw e;
+		}
+		finally{
+			
+		}
+		System.out.print("Out of block.");
 	}
 	
 	private static void ExitWhileLoop(){

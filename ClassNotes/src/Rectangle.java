@@ -2,7 +2,7 @@
 public class Rectangle {
 	private int Width;
 	private int Length;
-	private static int NbrOfRec = 0;
+	private int NbrOfRec = 0;
 	//The constructor is a method of constuctor type.
 	//"No R" constructor
 	//Make a private constructor to prevent automatic instantiation.
